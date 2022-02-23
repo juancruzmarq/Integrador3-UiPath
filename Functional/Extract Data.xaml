@@ -1,0 +1,212 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="870,2012" sap2010:WorkflowViewState.IdRef="Extract_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Extract_Data" sap:VirtualizedContainerService.HintSize="552,1947" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="[“Plan de vacunación COVID-19”]" Name="strBusqueda" />
+      <Variable x:TypeArguments="x:String" Default="https://data.buenosaires.gob.ar" Name="strUrl" />
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory + &quot;\Input&quot;]" Name="strRootDownload" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abriendo pagina web: &quot; + strUrl]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="510,1724" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[strUrl]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1623" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Datasets" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ad50794-4a22-45f0-88ad-8a27f32dfe27" InformativeScreenshot="5f8ed6ad38e8e4e5c3996a0ec25fde31" Selector="&lt;html app='chrome.exe' url='https://data.buenosaires.gob.ar/dataset/' /&gt;&lt;webctrl parentid='main-nav' tag='A' aaname='Datasets' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type in search " EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[strBusqueda + &quot;[k(enter)]&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="32ec7849-3c89-4d0f-a834-30ef32506518" InformativeScreenshot="25111e6640860bc9302e548d717c458f" Selector="&lt;html app='chrome.exe' url='https://data.buenosaires.gob.ar/dataset/' /&gt;&lt;webctrl tag='INPUT' class='search form-control' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'H3'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e385406d-2fbf-42c4-92d1-dcf5b41f7433" InformativeScreenshot="9b791b914bbab14603082e62658c8878" Selector="&lt;html app='chrome.exe' url='https://data.buenosaires.gob.ar/dataset/?q=Plan+de+vacunaci%C3%B3n+COVID-19' /&gt;&lt;webctrl tag='H3' aaname='Plan de vacunación COVID-19' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="95ba8924-4e81-4d8c-bf20-512cdbce812f" InformativeScreenshot="cfdb6fc4e76e141c4616fdf6586396a6" Selector="&lt;html app='chrome.exe' url='https://data.buenosaires.gob.ar/dataset/plan-de-vacunacion-covid-19' /&gt;&lt;webctrl parentid='pkg-resources' tag='A' aaname='DESCARGAR' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Guardar como" sap:VirtualizedContainerService.HintSize="434,795" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e295bcf8-2731-4643-8a1f-349074dca7ee" Version="V1">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,506" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into 'Ubicaciones anteriores'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="e295bcf8-2731-4643-8a1f-349074dca7ee" Text="[strRootDownload + &quot;[k(enter)]&quot;]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="659, 36, 33, 30" ElementType="Button" FriendlyName="'Ubicaciones anteriores'" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' title='Barra de herramientas de área de dirección' /&gt;&lt;ctrl name='Barra de herramientas de área de dirección' role='tool bar' /&gt;&lt;ctrl name='Ubicaciones anteriores' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' title='Barra de herramientas de área de dirección' /&gt;&lt;ctrl name='Barra de herramientas de área de dirección' role='tool bar' /&gt;&lt;ctrl name='Ubicaciones anteriores' role='push button' automationid='' check:text='Ubicaciones anteriores' /&gt;" Guid="92c1a277-a18f-451e-81eb-543005cad3f5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAAiCAYAAADYmxC7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACtSURBVFhH7dhBCsMgEIXhXsKFW6+iN/AensGbT3kFi0klHeyUDuUtfhLGhHyYrHKLMYq3fKJqreItVzsVQngciXoXUdqI0kaUNqK0/Tcq5ywppZc5Zlg7z68yQZVSpPcurbUDDOeYYQ3XzPdcZYKaHz5gq9nq3lVmr++M2AUh0w99hu2CkCkKDdguCJmjEDC7IPQV1KcRpY0obURpI0rbE7X6wfDrXO3UyCEqyh1OgqJD6m0f2QAAAABJRU5ErkJggg==" InformativeScreenshot="30c010795b0c6947d0239a33ebc89d7f.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e295bcf8-2731-4643-8a1f-349074dca7ee" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="747, 494, 88, 26" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Guardar' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Guardar' check:text='unchecked' /&gt;" Guid="42f122b3-b517-4827-b7e9-c3fa51f9dc22" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFdSURBVGhD7ZbhjYQgEIWvJ/9YC83QCq1Qih3YAedj9XbggOxuYNjE95IvEdFx/Rxxf9Z1DUQPClfmT/i+72QgReHMmDSFL8tCOoJQuCIIhSuCULgiCIUrglC4Isg84caFLV7lzOaCKR3XBRv8cTVnSnN6IHOER9mpAOt9sPKYrtxauAnuaG1vS3OjuLPw2N2tbs7lpGPr4097xNvkGO+xSJ21xZK1OfdZjc4gc4SL9dqg3WMuIW3hT+R+bEOsEXPPt+hxjXdr9Af5kg7Pb1zKycZJe1bOyR7qRzUGgOgLL96Y3JfPi3HysPAtqJzTEv5qjQEgE4Rfr7jscnmz2Uc1duM5h+1LZBRXk4VxZUl5uUZ/kCnCI8lrDQdi7ZRzx9/F/GHEbMf+VneKGulH840anUHmCb8hCIUrglC4IgiFK4JQuCIIhSuCULgiSFM40z9V4WQc/4QTHShclTX8AlUoUrkvvi2RAAAAAElFTkSuQmCC" InformativeScreenshot="b237d7c9c482a523f010ea5e049e5bb3.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-1358, 7, 960, 540" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJNSURBVDhPrZJLTxNhFIbnD8CGClZFQ2QhK7cmSGmnrXSaXmiLEhhKoVIIC3VlXHtBo7LRGHaUXjCtrGyibtR4BzG0tQRNtZ2ZYoxRiAudJnjrvM43nVIbdaVv8u6+5znnJB/13/ORZeqFXus5/hCzzPcwIufuEnm3KZN3mSfWHe116rM/R+hzWIRe2xvO0wXOfQCcywzOaUTeYUDepgdnp1d5h9GsPq9Nqtts5A8yEt9jgSIgcLdJFtBlgZ1IOsExHRJn6TCqWDmtt47UTxxzvV2RAUWgTs8PuEr8cY/Ajenz3Ghnng/oc3xAlxNGdfM157TGxs/um/L+uG1tR84pS/y94B4sYO6JiPhjEcLLeazdcOLzzf3YuNOJ7/d1KC2azqg4RbVcHVlumQ1g5IQTz5gO8A8XMDhVhH2yCNvFItgrRbwTngIps1qjXENaxRWBuCt6GHumhxH32nBNnlqBrRfKjT0SUUq7ZdAEJImAFlWcopqjfnFn1A9SdtKnCH6FmfMVgacMJ2myQVWwIzKU2R4eAmlzZFhayL5eJ2tX4L7LRbwSsh82p5cF1RO0s77T28I+kGrl7o0fReJFWplKej2TxPsl9usmnDSglDKcVHGK0iT8ddqQb3VraBCkTSGv0rbYONoiY7iU6K5OlmEpSReQddT+yqbwoKkx7JUaZZB0y8wANDMsdk/348uSWarASOklZGhaxWrTEGKNjUFvoSHIotK796zfqpMNhb/ClZBzNOGBU5og+9ww17+2sWj6VFrSp8nNv63976Gon7nxsKpDOqxFAAAAAElFTkSuQmCC" InformativeScreenshot="e8b97758fe3680e775c845ed824c5d4d.png" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como'/&gt;" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
