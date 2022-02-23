@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="870,2012" sap2010:WorkflowViewState.IdRef="Extract_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_Data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="772,2143" sap2010:WorkflowViewState.IdRef="Extract_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -71,7 +71,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract_Data" sap:VirtualizedContainerService.HintSize="552,1947" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_Data" sap:VirtualizedContainerService.HintSize="552,2078" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[“Plan de vacunación COVID-19”]" Name="strBusqueda" />
       <Variable x:TypeArguments="x:String" Default="https://data.buenosaires.gob.ar" Name="strUrl" />
@@ -83,13 +83,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abriendo pagina web: &quot; + strUrl]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="510,1724" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[strUrl]">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="510,1855" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[strUrl]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1623" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1754" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,6 +203,7 @@
                 <uix:TargetApp Area="-1358, 7, 960, 540" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJNSURBVDhPrZJLTxNhFIbnD8CGClZFQ2QhK7cmSGmnrXSaXmiLEhhKoVIIC3VlXHtBo7LRGHaUXjCtrGyibtR4BzG0tQRNtZ2ZYoxRiAudJnjrvM43nVIbdaVv8u6+5znnJB/13/ORZeqFXus5/hCzzPcwIufuEnm3KZN3mSfWHe116rM/R+hzWIRe2xvO0wXOfQCcywzOaUTeYUDepgdnp1d5h9GsPq9Nqtts5A8yEt9jgSIgcLdJFtBlgZ1IOsExHRJn6TCqWDmtt47UTxxzvV2RAUWgTs8PuEr8cY/Ajenz3Ghnng/oc3xAlxNGdfM157TGxs/um/L+uG1tR84pS/y94B4sYO6JiPhjEcLLeazdcOLzzf3YuNOJ7/d1KC2azqg4RbVcHVlumQ1g5IQTz5gO8A8XMDhVhH2yCNvFItgrRbwTngIps1qjXENaxRWBuCt6GHumhxH32nBNnlqBrRfKjT0SUUq7ZdAEJImAFlWcopqjfnFn1A9SdtKnCH6FmfMVgacMJ2myQVWwIzKU2R4eAmlzZFhayL5eJ2tX4L7LRbwSsh82p5cF1RO0s77T28I+kGrl7o0fReJFWplKej2TxPsl9usmnDSglDKcVHGK0iT8ddqQb3VraBCkTSGv0rbYONoiY7iU6K5OlmEpSReQddT+yqbwoKkx7JUaZZB0y8wANDMsdk/348uSWarASOklZGhaxWrTEGKNjUFvoSHIotK796zfqpMNhb/ClZBzNOGBU5og+9ww17+2sWj6VFrSp8nNv63976Gon7nxsKpDOqxFAAAAAElFTkSuQmCC" InformativeScreenshot="e8b97758fe3680e775c845ed824c5d4d.png" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como'/&gt;" />
               </uix:NApplicationCard.TargetApp>
             </uix:NApplicationCard>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Archivo descargado&quot;]" />
             <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>

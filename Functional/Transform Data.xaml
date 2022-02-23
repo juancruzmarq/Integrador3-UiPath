@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Transform_Data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1139,3905" sap2010:WorkflowViewState.IdRef="Transform_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Transform_Data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1180,4133" sap2010:WorkflowViewState.IdRef="Transform_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -59,23 +59,19 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Transform_Data" sap:VirtualizedContainerService.HintSize="1149,3840" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Transform_Data" sap:VirtualizedContainerService.HintSize="1149,4068" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strGrupoEtario" />
       <Variable x:TypeArguments="x:Int32" Name="intPersonasGrupoEtario" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtGrupoEtario" />
-      <Variable x:TypeArguments="x:String" Name="strCSVRoot">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory + &quot;\Input\dataset_total_vacunas.csv&quot;" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory + &quot;\Input\dataset_total_vacunas.csv&quot;]" Name="strCSVRoot" />
       <Variable x:TypeArguments="s:String[]" Name="arrGrupoEtario" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtDatasetVacunas" />
       <Variable x:TypeArguments="x:Int32" Name="intGeneroFemenino" />
@@ -85,11 +81,7 @@
       <Variable x:TypeArguments="x:Int32" Name="intDosis2" />
       <Variable x:TypeArguments="x:Int32" Name="intCantidadDosis_2" />
       <Variable x:TypeArguments="x:String" Name="strGenero" />
-      <Variable x:TypeArguments="x:String" Name="strRootDirectory">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory]" Name="strRootDirectory" />
       <Variable x:TypeArguments="x:String" Name="variable1" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -97,9 +89,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1107,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Transform Data&quot;]" />
-    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[dtDatasetVacunas]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[strCSVRoot]" sap:VirtualizedContainerService.HintSize="1107,155" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-    <ui:FilterDataTable DataTable="[dtDatasetVacunas]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1107,162" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtGrupoEtario]" SelectColumnsMode="Keep">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1107,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Transform Data&quot;]" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[dtDatasetVacunas]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[strCSVRoot]" sap:VirtualizedContainerService.HintSize="1107,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1107,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Creado DATATABLE&quot;]" />
+    <ui:FilterDataTable DataTable="[dtDatasetVacunas]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1107,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtGrupoEtario]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -111,7 +104,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[dtGrupoEtario]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="1107,80" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[dtGrupoEtario]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="1107,79" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
     <Assign sap:VirtualizedContainerService.HintSize="1107,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[arrGrupoEtario]</OutArgument>
@@ -120,45 +113,45 @@
         <InArgument x:TypeArguments="s:String[]">[{"30 o menos", "41 a 50", "51 a 60", "61 a 70", "81 a 90", "91 o mas"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1107,2998" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrGrupoEtario]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1107,3103" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrGrupoEtario]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1071,2873" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1071,2979" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:BuildDataTable DataTable="[dtGrupoEtario]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FECHA_ADMINISTRACION&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;GRUPO_ETARIO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;GENERO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;VACUNA&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;DOSIS_1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;DOSIS_2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDatasetVacunas]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1029,2529" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:BuildDataTable DataTable="[dtGrupoEtario]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1029,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;FECHA_ADMINISTRACION&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;GRUPO_ETARIO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;GENERO&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;VACUNA&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DOSIS_1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;DOSIS_2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDatasetVacunas]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1029,2505" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="995,2408" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="995,2385" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="GRUPO_ETARIO" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="953,188" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="GRUPO_ETARIO" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="953,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
                       <ui:GetRowItem.Value>
                         <OutArgument x:TypeArguments="x:String">[strGrupoEtario]</OutArgument>
                       </ui:GetRowItem.Value>
                     </ui:GetRowItem>
-                    <If Condition="[item.Equals(strGrupoEtario)]" sap:VirtualizedContainerService.HintSize="953,2088" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[item.Equals(strGrupoEtario)]" sap:VirtualizedContainerService.HintSize="953,2068" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="917,1898" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence sap:VirtualizedContainerService.HintSize="917,1881" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow.Item(&quot;FECHA_ADMINISTRACION&quot;), CurrentRow.Item(&quot;GRUPO_ETARIO&quot;), CurrentRow.Item(&quot;GENERO&quot;), CurrentRow.Item(&quot;VACUNA&quot;), CurrentRow.Item(&quot;DOSIS_1&quot;),CurrentRow.Item(&quot;DOSIS_2&quot;)}]" DataTable="[dtGrupoEtario]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="875,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow.Item(&quot;FECHA_ADMINISTRACION&quot;), CurrentRow.Item(&quot;GRUPO_ETARIO&quot;), CurrentRow.Item(&quot;GENERO&quot;), CurrentRow.Item(&quot;VACUNA&quot;), CurrentRow.Item(&quot;DOSIS_1&quot;),CurrentRow.Item(&quot;DOSIS_2&quot;)}]" DataTable="[dtGrupoEtario]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="875,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                           <Assign sap:VirtualizedContainerService.HintSize="875,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[intPersonasGrupoEtario]</OutArgument>
@@ -167,12 +160,12 @@
                               <InArgument x:TypeArguments="x:Int32">[intPersonasGrupoEtario + 1]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="GENERO" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,188" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[CurrentRow]">
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="GENERO" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,185" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[CurrentRow]">
                             <ui:GetRowItem.Value>
                               <OutArgument x:TypeArguments="x:String">[strGenero]</OutArgument>
                             </ui:GetRowItem.Value>
                           </ui:GetRowItem>
-                          <If Condition="[strGenero.Equals(&quot;F&quot;)]" sap:VirtualizedContainerService.HintSize="875,594" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If Condition="[strGenero.Equals(&quot;F&quot;)]" sap:VirtualizedContainerService.HintSize="875,589" sap2010:WorkflowViewState.IdRef="If_3">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -191,13 +184,13 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="526,434" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence sap:VirtualizedContainerService.HintSize="526,431" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[strGenero.Equals(&quot;M&quot;)]" sap:VirtualizedContainerService.HintSize="484,342" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If Condition="[strGenero.Equals(&quot;M&quot;)]" sap:VirtualizedContainerService.HintSize="484,339" sap2010:WorkflowViewState.IdRef="If_4">
                                   <If.Then>
                                     <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -228,12 +221,12 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="DOSIS_1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,188" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[CurrentRow]">
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="DOSIS_1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,185" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[CurrentRow]">
                             <ui:GetRowItem.Value>
                               <OutArgument x:TypeArguments="x:Int32">[intDosis1]</OutArgument>
                             </ui:GetRowItem.Value>
                           </ui:GetRowItem>
-                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="DOSIS_2" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,188" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[CurrentRow]">
+                          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="DOSIS_2" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="875,185" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[CurrentRow]">
                             <ui:GetRowItem.Value>
                               <OutArgument x:TypeArguments="x:Int32">[intDosis2]</OutArgument>
                             </ui:GetRowItem.Value>
@@ -270,29 +263,16 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1029,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[strRootDirectory + &quot;\Functional\Load Data.xaml&quot;]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1029,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Grupo etario extraido: &quot; + strGrupoEtario]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1029,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[strRootDirectory + &quot;\Functional\Load Data.xaml&quot;]">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtGrupoEtario">
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtGrupoEtario" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intGeneroFemenino">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intGeneroFemenino" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intGeneroMasculino">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intGeneroMasculino" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intPersonasGrupoEtario">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intPersonasGrupoEtario" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strGrupoEtario">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intCantidadDosis_1">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCantidadDosis_1" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intCantidadDosis_2">
-                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCantidadDosis_2" />
-                </InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtGrupoEtario">[dtGrupoEtario]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intGeneroFemenino">[intGeneroFemenino]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intGeneroMasculino">[intGeneroMasculino]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intPersonasGrupoEtario">[intPersonasGrupoEtario]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strGrupoEtario">[item.ToString]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intCantidadDosis_1">[intCantidadDosis_1]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intCantidadDosis_2">[intCantidadDosis_2]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
